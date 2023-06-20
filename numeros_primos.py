@@ -1,12 +1,16 @@
 import math
 class Numeros_primos:
+
     def es_primo(self, numero):
-        valor = self._calcula_factorial(numero-1)
-        valor = valor + 1
-        if self._es_multiplo_de_n(valor,numero):
-            return True
-        else:
+        if numero == 1:
             return False
+        else:
+            valor = self._calcula_factorial(numero-1)
+            valor = valor + 1
+            if self._es_multiplo_de_n(valor,numero):
+                return True
+            else:
+                return False
 
 
     def _calcula_factorial(self, numero):
@@ -21,6 +25,14 @@ class Numeros_primos:
             return True
         else:
             return False
+
+    # sea P el numero de primos menores que n se sabe que P es divisor de n#
+    def cuantos_primos_antes_que_n(self, numero):
+        contador = 0
+        for i in range(2, numero):
+            if Numeros_primos.es_primo(self, i):
+                contador = contador + 1
+        return contador
 
 
 

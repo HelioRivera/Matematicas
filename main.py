@@ -13,7 +13,13 @@ if __name__=='__main__':
     # resultado = resolver_operacion(expresion)
     # print("El resultado es:", resultado)
 
-    es_primo = np.Numeros_primos()
+    primo = np.Numeros_primos()
+    # flag = primo.es_primo(1)
+    # print(flag)
     numero = int(input("Ingresa un número: "))
-    valor = es_primo.es_primo(numero)
-    print("es_primo = " + str(valor))
+    cuantos_primos = primo.cuantos_primos_antes_que_n(numero)
+    resto= numero % cuantos_primos
+    if resto == 0:
+        print(cuantos_primos , "es divisor de ", numero)
+    else:
+        print(cuantos_primos , "no es divisor de ", numero)
